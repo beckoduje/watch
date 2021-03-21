@@ -46,7 +46,6 @@ innerCircle.addEventListener("click", () => {
     root.style.setProperty("--container-color", "#fa1e0e");
     root.style.setProperty("--color-primary", "white");
     root.style.setProperty("--watch-shadow", "0 0 5px white");
-    root.style.setProperty("--hour-color", "black");
     root.style.setProperty("--arrow-color", "#ffbe0f");
     mode = "light";
   } else {
@@ -54,7 +53,6 @@ innerCircle.addEventListener("click", () => {
     root.style.setProperty("--container-color", "#3b444b");
     root.style.setProperty("--color-primary", "black");
     root.style.setProperty("--watch-shadow", "0 0 5px white");
-    root.style.setProperty("--hour-color", "#2c2c2c");
     root.style.setProperty("--arrow-color", "white");
     mode = "dark";
   }

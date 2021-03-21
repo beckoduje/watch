@@ -1,0 +1,139 @@
+:root {
+  --container-color: #3b444b;
+  --color-primary: black;
+  --watch-shadow: 0 0 5px white;
+  --hour-color: #2c2c2c;
+  --arrow-color: white;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--container-color);
+}
+
+.watch-body {
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: var(--watch-shadow);
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.hour-indicator-container {
+  position: absolute;
+  top: calc(50% - 5px);
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hour-indicator-container:nth-child(1) {
+  transform: rotate(90deg);
+}
+
+.hour-indicator-container:nth-child(3) {
+  transform: rotate(120deg);
+}
+
+.hour-indicator-container:nth-child(4) {
+  transform: rotate(150deg);
+}
+
+.hour-indicator-container:nth-child(5) {
+  transform: rotate(30deg);
+}
+
+.hour-indicator-container:nth-child(6) {
+  transform: rotate(60deg);
+}
+
+.hour {
+  width: 20px;
+  background-color: var(--hour-color);
+  border-radius: 4px;
+}
+
+.hour.hour--main {
+  width: 35px;
+}
+
+.inner-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--hour-color);
+  background-image: url("lightMode.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.clock-arrow {
+  position: absolute;
+  top: calc(50% - 7px);
+  width: 50%;
+  height: 14px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  display: flex;
+}
+
+.clock-arrow.clock-arrow--hours {
+  top: calc(50% - 11.5px);
+  height: 23px;
+  padding-left: 55px;
+}
+
+.clock-arrow.clock-arrow--seconds {
+  top: calc(50% - 5px);
+  height: 10px;
+  padding-left: 10px;
+}
+
+.clock-arrow.clock-arrow--minutes {
+  padding-left: 60px;
+}
+
+.clock-arrow__visible-part {
+  background-color: var(--arrow-color);
+  width: 20px;
+  border-radius: 4px;
+}
+
+.clock-arrow.clock-arrow--hours > .clock-arrow__visible-part {
+  width: 65px;
+  border-radius: 8px;
+}
+
+.clock-arrow.clock-arrow--minutes > .clock-arrow__visible-part {
+  width: 120px;
+  border-radius: 6px;
+}
